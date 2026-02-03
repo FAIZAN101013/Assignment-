@@ -3,67 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assignment: User Registration & Validation Form</title>
+  <title>User Registration Form</title>
+
+  <!-- External CSS -->
   <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- External JS -->
   <script src="script.js" defer></script>
 </head>
 
 <body>
-  <div class="form">
-    <form id="registrationForm">
-      <h2 class="header">User Registration</h2>
 
-      <!-- Name -->
-      <label for="name" class="form-labels">Name</label>
-      <input type="text" id="name" />
+  <div class="form-container">
+    <form id="registrationForm">
+
+      <h2>User Registration</h2>
+
+      <!-- Full Name -->
+      <label>Full Name</label>
+      <input type="text" id="name">
+      <small class="error-text"></small>
 
       <!-- Email -->
-      <label for="email" class="form-labels">Email</label>
-      <input type="email" id="email" />
+      <label>Email</label>
+      <input type="email" id="email">
+      <small class="error-text"></small>
 
       <!-- Password -->
-      <label for="password" class="form-labels">Password</label>
-      <input type="password" id="password" />
+      <label>Password</label>
+      <input type="password" id="password">
+      <p id="strength"></p>
+      <small class="error-text"></small>
 
       <!-- Confirm Password -->
-      <label for="confirmPassword" class="form-labels">Confirm Password</label>
-      <input type="password" id="confirmPassword" />
+      <label>Confirm Password</label>
+      <input type="password" id="confirmPassword">
+      <small class="error-text"></small>
 
-      <!-- Phone -->
-      <label for="phone" class="form-labels">Phone Number</label>
-      <input type="text" id="phone" />
+      <!-- Phone Number -->
+      <label>Phone Number</label>
+      <input type="text" id="phone">
+      <small class="error-text"></small>
 
       <!-- Gender -->
-      <label class="form-labels">Gender</label>
+      <label>Gender</label>
       <div class="gender">
-        <input type="radio" name="gender" value="Male" /> Male
-        <input type="radio" name="gender" value="Female" /> Female
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female
       </div>
 
       <!-- Terms -->
-      <div class="terms form-labels">
-        <input type="checkbox" id="terms" />
+      <div class="terms">
+        <input type="checkbox" id="terms">
         I agree to Terms & Conditions
       </div>
 
       <!-- Submit -->
-      <button type="submit" id="submit">Submit</button>
+      <button type="submit">Submit</button>
+
     </form>
   </div>
+
+  <!-- Success Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-box">
+      <h3>Registration Successful 🎉</h3>
+      <button onclick="closePopup()">OK</button>
+    </div>
+  </div>
+
 </body>
 </html>
-
-
-
-<!--
- Full Name
- Email
- Password
- Confirm Password
- Phone Number
- Gender (Radio Button)
- Terms & Conditions (Checkbox)
- Submit Button -->
