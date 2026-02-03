@@ -1,51 +1,237 @@
-*{
-    box-sizing: border-box;
-    font-family: "Roboto", sans-serif;
-
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body{
-    background: #f2f2f2;
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 
+/* Form container */
 .form {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-
-form{
-    background: #fff;
-    padding: 20px;
-    width: 320px;
-    
-    border-radius: 6px;
-}
-
-.form-labels{
-     display: block;
-    margin-top: 12px;
-}
-
-input {
   width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  display: flex;
+  justify-content: center;
 }
 
+form {
+  background: #fff;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+form h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* Labels & Inputs */
+.form-labels {
+  display: block;
+  margin-top: 18px;
+  font-weight: 500;
+  color: #555;
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 6px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+input:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Error state */
+input.error {
+  border-color: #ff4757;
+  background: #fff5f5;
+}
+
+.error-text {
+  color: #ff4757;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+/* Gender & Terms */
+.gender,
+.terms {
+  margin-top: 18px;
+}
+
+.gender label,
+.terms label {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+/* Password strength */
+#strength {
+  font-size: 12px;
+  margin-top: 6px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+#strength.weak {
+  color: #ff4757;
+  background: #ffe0e0;
+}
+
+#strength.medium {
+  color: #ffa502;
+  background: #fff3e0;
+}
+
+#strength.strong {
+  color: #4caf50;
+  background: #e8f5e9;
+}
+
+/* Button */
 button {
   width: 100%;
-  margin-top: 15px;
-  padding: 10px;
-  background: #4caf50;
+  margin-top: 25px;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
 }
 
 button:hover {
-  background: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Popup */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.popup.show {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.popup-content {
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.popup-content h3 {
+  color: #4caf50;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.popup-content p {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.popup-content button {
+  margin-top: 10px;
+  padding: 10px 30px;
+  width: auto;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  form {
+    padding: 30px 20px;
+  }
+  
+  form h2 {
+    font-size: 22px;
+  }
 }
