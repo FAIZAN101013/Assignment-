@@ -1,0 +1,11 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.form {
+    background-color: rgb(211, 226, 226);
+    display: flex;
+    flex : flex-col
+    text-align : center
+}

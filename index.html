@@ -9,9 +9,48 @@
 </head>
 <body>
     <div class="form">
-        <form>
+        <form id="registrationForm">
+            <h2 class="header">User Registration</h2>
+
+            <label for="name" class="form-labels">Name</label>
+            <input type="text" id="name" />
+
+            <label for="email" class="form-labels">Email</label>
+            <input type="email" id="emial" />
+
+            <label for="Password" class="form-labels">Password</label>
+            <input type="password" id="password />
+
+            <label for="password" class="form-labels">Confirm Password</label>
+            <input type="password" id="ConfirmPassword" />
+
+            <label for="number" class="form-labels">Phone Number</label>
+            <input type="text" id="Phone" />
+
+            <label>Gender</label>
+            <div class="gender">
+                <input type="radio" name="gender" value="Male"/>Male
+                <input type="radio" name="gender" value="Female"/>Female
+            </div>
+            <div class="terms">
+                <input type="checkbox" id="terms">
+                I agree to Terms & Conditions
+            </div>
+
+            <button type="submit" name="submit" id="submit" >Submit</button>
             
         </form>
     </div>
 </body>
 </html>
+
+
+<!--
+ Full Name
+ Email
+ Password
+ Confirm Password
+ Phone Number
+ Gender (Radio Button)
+ Terms & Conditions (Checkbox)
+ Submit Button -->
